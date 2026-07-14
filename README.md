@@ -1,6 +1,6 @@
 # minimachat (minima)
 
-**A local chat with a memory that stays honest.** Deadlines strike themselves through when they pass. You can scrub the page back to see what it believed an hour ago. The good parts of a conversation get saved as living documents you own — not a scroll you'll never find again.
+**A local chat with a memory that stays honest.** Deadlines strike themselves through when they pass. You can scrub the page back to see what it believed an hour ago. The good parts of a conversation get saved as living documents you own - not a scroll you'll never find again.
 
 Most chats forget. Worse, they keep showing you things that stopped being true. minima remembers *honestly*, on your machine, with your keys.
 
@@ -13,10 +13,10 @@ Most chats forget. Worse, they keep showing you things that stopped being true. 
 
 Every other local chat leads with "ChatGPT, but private." minima is built around one idea nobody else has: **your past stays true.**
 
-- **Temporal memory that ages.** Facts carry time. A deadline that passes gets struck through — visibly, honestly — instead of sitting there as a stale claim. Powered by [pysince](https://github.com/LNSHRIVAS/since).
+- **Temporal memory that ages.** Facts carry time. A deadline that passes gets struck through - visibly, honestly - instead of sitting there as a stale claim. Powered by [pysince](https://github.com/LNSHRIVAS/since).
 - **Scrub through what it believed.** Drag the timeline to see the memory and the page as they were an hour, a day, or a week ago. Your assistant's mind, at any point in time.
-- **Books, not lost scrolls.** Tell minima to save an answer and it distills it into a continuous document you own — with a receipt back to the exact moment it was said. Reference a book from any chat.
-- **Agentic, on your files.** It reads, writes, edits, and searches your local filesystem, runs commands, and searches the web — all locally, with a dumb-and-reliable agent loop that never runs away.
+- **Books, not lost scrolls.** Tell minima to save an answer and it distills it into a continuous document you own - with a receipt back to the exact moment it was said. Reference a book from any chat.
+- **Agentic, on your files.** It reads, writes, edits, and searches your local filesystem, runs commands, and searches the web - all locally, with a dumb-and-reliable agent loop that never runs away.
 - **Yours to shape.** Local, BYOK, hackable, MIT-licensed. No cloud, no accounts, no telemetry. A personal chat you can actually make your own.
 
 ---
@@ -25,7 +25,7 @@ Every other local chat leads with "ChatGPT, but private." minima is built around
 
 **Requirements:** Windows 10+, [Python 3.10+](https://www.python.org/downloads/), PowerShell
 
-> **Note:** minima is currently **Windows-only** — the server is PowerShell. Cross-platform support (a Python server port) is the most-wanted contribution — see [Contributing](#contributing).
+> **Note:** minima is currently **Windows-only** - the server is PowerShell. Cross-platform support (a Python server port) is the most-wanted contribution - see [Contributing](#contributing).
 
 ```powershell
 # 1. Clone
@@ -42,22 +42,22 @@ pip install -r requirements.txt
 
 Open **http://localhost:8081** (use `localhost`, not `127.0.0.1`).
 
-Click **Keys** to configure your API endpoint and model, then save. minima works with any OpenAI-compatible API — bring whatever model you like.
+Click **Keys** to configure your API endpoint and model, then save. minima works with any OpenAI-compatible API - bring whatever model you like.
 
 ---
 
 ## How it works
 
-minima is a single-page UI that talks directly to your LLM API. A local PowerShell server handles filesystem access, web search, and the temporal store; everything runs on your machine. Connection settings live in your browser — no build step, no accounts.
+minima is a single-page UI that talks directly to your LLM API. A local PowerShell server handles filesystem access, web search, and the temporal store; everything runs on your machine. Connection settings live in your browser - no build step, no accounts.
 
-- **Memory** (left panel) — facts the agent remembers, with time-aware status and receipts back to where each came from.
-- **When** (timeline) — scrub to see what was believed at any past moment.
-- **Books** — distilled, continuous documents that capture the good parts of your chats and stay referenceable across sessions.
-- **Files / Workspace** — point it at a project folder and it becomes the agent's workspace.
+- **Memory** (left panel) - facts the agent remembers, with time-aware status and receipts back to where each came from.
+- **When** (timeline) - scrub to see what was believed at any past moment.
+- **Books** - distilled, continuous documents that capture the good parts of your chats and stay referenceable across sessions.
+- **Files / Workspace** - point it at a project folder and it becomes the agent's workspace.
 
 ### Workspace
 
-Open **Files** and navigate to your project folder — that becomes the workspace. New files and PNG exports go under `{workspace}/minima-exports/`.
+Open **Files** and navigate to your project folder - that becomes the workspace. New files and PNG exports go under `{workspace}/minima-exports/`.
 
 ### Token budget
 
@@ -74,14 +74,14 @@ Turn safety (64 model calls) and a 10-minute wall clock still apply when unlimit
 
 ## Contributing
 
-minima is meant to be **yours to shape**, and contributions are genuinely welcome — this is an open project I want people to build on and make their own.
+minima is meant to be **yours to shape**, and contributions are genuinely welcome - this is an open project I want people to build on and make their own.
 
 **Best places to start:**
-- **Cross-platform support** — the server is PowerShell today; a Python port would open minima to macOS and Linux. This is the highest-impact contribution.
+- **Cross-platform support** - the server is PowerShell today; a Python port would open minima to macOS and Linux. This is the highest-impact contribution.
 - Check issues tagged **`good-first-issue`** for small, well-scoped tasks.
 - Read **[ARCHITECTURE.md](ARCHITECTURE.md)** to understand how the pieces fit together before diving in.
 
-If you open an issue or PR, I'll try to respond quickly and warmly — even a bug report or a "here's what confused me" is valuable. If you build a personal fork or a theme, I'd love to see it.
+If you open an issue or PR, I'll try to respond quickly and warmly - even a bug report or a "here's what confused me" is valuable. If you build a personal fork or a theme, I'd love to see it.
 
 > 💡 **To do:** create a few `good-first-issue` tickets and make sure `ARCHITECTURE.md` reads clearly for a stranger. These two things do more to attract contributors than any feature.
 
@@ -112,4 +112,4 @@ Expect: `harness-tests: 11 passed, 0 failed`
 
 ## License
 
-MIT — see upstream components for their licenses ([pysince](https://github.com/LNSHRIVAS/since), CDN libraries in `index.html`).
+MIT - see upstream components for their licenses ([pysince](https://github.com/LNSHRIVAS/since), CDN libraries in `index.html`).
