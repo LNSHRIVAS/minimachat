@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Local / runtime
+exports/
+minima-exports/
+*.db
+.since/
+
+# IDE & OS
+.cursor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# User-generated / demo projects (not part of the app)
+prime_countdown/
+
+# Secrets — keys live in browser localStorage only
+.env
+.env.*
+*.pem
+
+# Logs & temp
+*.log
+*.tmp
+~$*

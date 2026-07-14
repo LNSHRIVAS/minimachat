@@ -1,0 +1,5 @@
+# Temporal memory bridge (https://github.com/LNSHRIVAS/since)
+pysince>=0.3.3
+
+# Web search tool (DuckDuckGo, no API key)
+ddgs>=9.0.0
