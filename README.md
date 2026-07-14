@@ -4,6 +4,8 @@ Local **bring-your-own-key** agentic chat for Windows. A single-page UI talks to
 
 No build step. Connection settings are saved in your browser.
 
+<img width="1920" height="384" alt="White Travel Reddit Banner (2)" src="https://github.com/user-attachments/assets/f551df0f-9030-4594-9dc6-b3730e5825d9" />
+
 ## Quick start
 
 **Requirements:** Windows 10+, [Python 3.10+](https://www.python.org/downloads/), PowerShell
@@ -33,6 +35,7 @@ In **Keys**, the token budget slider sets how many tokens each agent run may con
 |--------|-------|
 | 25k – 1M | Fixed cap per run |
 | ∞ | No token limit |
+<img width="1920" height="384" alt="White Travel Reddit Banner (2)" src="https://github.com/user-attachments/assets/3cf4cd4e-0f1a-4419-885c-8954e05ffdae" />
 
 Turn safety (64 model calls) and a 10-minute wall clock still apply when unlimited.
 
