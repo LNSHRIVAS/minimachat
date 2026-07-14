@@ -74,6 +74,8 @@ Turn safety (64 model calls) and a 10-minute wall clock still apply when unlimit
 
 ## Contributing
 
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** for setup, pull request expectations, and where help is most useful.
+
 minima is meant to be **yours to shape**, and contributions are genuinely welcome - this is an open project I want people to build on and make their own.
 
 **Best places to start:**
@@ -82,8 +84,6 @@ minima is meant to be **yours to shape**, and contributions are genuinely welcom
 - Read **[ARCHITECTURE.md](ARCHITECTURE.md)** to understand how the pieces fit together before diving in.
 
 If you open an issue or PR, I'll try to respond quickly and warmly - even a bug report or a "here's what confused me" is valuable. If you build a personal fork or a theme, I'd love to see it.
-
-> 💡 **To do:** create a few `good-first-issue` tickets and make sure `ARCHITECTURE.md` reads clearly for a stranger. These two things do more to attract contributors than any feature.
 
 ---
 
