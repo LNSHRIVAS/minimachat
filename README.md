@@ -35,7 +35,6 @@ In **Keys**, the token budget slider sets how many tokens each agent run may con
 |--------|-------|
 | 25k – 1M | Fixed cap per run |
 | ∞ | No token limit |
-<img width="1920" height="384" alt="White Travel Reddit Banner (2)" src="https://github.com/user-attachments/assets/3cf4cd4e-0f1a-4419-885c-8954e05ffdae" />
 
 Turn safety (64 model calls) and a 10-minute wall clock still apply when unlimited.
 
