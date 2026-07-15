@@ -276,7 +276,7 @@ def store_entry(
     chat_id: str | None = None,
     source_msg_id: str | None = None,
     source_excerpt: str | None = None,
-    replace_msg_id: bool = True,
+    replace_msg_id: bool = False,
 ) -> dict:
     book = normalize_book_name(book_name)
     sec = normalize_section(section)

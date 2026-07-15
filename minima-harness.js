@@ -21,7 +21,7 @@
     'After locating a project file, remember its full path with remember.',
     'write_file creates new files; set overwrite:true to replace. edit_file replace must match once.',
     'Never use run_command for move/copy/delete — use native file tools.',
-    'For deadlines/preferences use remember. For book passages use store_in_book.',
+    'For deadlines/preferences use remember. For book passages use store_in_book (always appends; returns turn_id). Use edit_book_passage with that turn_id to revise.',
     'Temporal context and clock lines are authoritative for time/date questions — not web_search.',
     'Active memory JSON uses s=passed|upcoming and w=when. If s=passed, the plan/deadline is over — describe it in past tense only; never say tomorrow or upcoming.',
     'When recalling old plans, compare dates to the authoritative clock. Events before today already happened.',

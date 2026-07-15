@@ -343,6 +343,7 @@ def cmd_book_store(data: dict) -> dict:
         chat_id=data.get("session_id"),
         source_msg_id=data.get("source_msg_id"),
         source_excerpt=data.get("source_excerpt") or content or body,
+        replace_msg_id=bool(data.get("replace") or data.get("update_existing")),
     )
     book_doc = bk.get_book(store, entry["book_name"])
     return {
