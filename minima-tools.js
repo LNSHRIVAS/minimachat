@@ -22,7 +22,7 @@
     {type:'function',function:{name:'search_files',description:'Find files by name',parameters:{type:'object',properties:{query:{type:'string'},root:{type:'string'}},required:['query']}}},
     {type:'function',function:{name:'run_command',description:'Run shell command; returns exit_code, stdout, stderr (capped).',parameters:{type:'object',properties:{command:{type:'string'},cwd:{type:'string'},timeout_sec:{type:'integer'}},required:['command']}}},
     {type:'function',function:{name:'web_search',description:'Search the web',parameters:{type:'object',properties:{query:{type:'string'}},required:['query']}}},
-    {type:'function',function:{name:'remember',description:'Store a fact in memory',parameters:{type:'object',properties:{fact:{type:'string'},ttl_class:{type:'string',enum:['permanent','slow','ephemeral']}},required:['fact']}}},
+    {type:'function',function:{name:'remember',description:'Store a fact in memory. Use slow for deadlines/plans (keeps until passed + 30d). Use permanent for preferences. Never use ephemeral for scheduled times — it expires in 5 minutes.',parameters:{type:'object',properties:{fact:{type:'string'},ttl_class:{type:'string',enum:['permanent','slow','ephemeral'],description:'Default slow. Use ephemeral only for throwaway session notes with no deadline.'}},required:['fact']}}},
     {type:'function',function:{name:'store_in_book',description:'Append a new passage to a book (always creates a new entry; same section name groups under one heading). Returns turn_id in the JSON response — save it for edit_book_passage. Does not overwrite existing passages unless replace:true.',parameters:{type:'object',properties:{book_name:{type:'string'},section:{type:'string',description:'Section heading — repeat to add more passages under the same heading'},passage:{type:'string'},title:{type:'string'},replace:{type:'boolean',description:'If true, update the passage last stored from this message instead of appending'}},required:['passage']}}},
     {type:'function',function:{name:'create_book',description:'Create named book',parameters:{type:'object',properties:{book_name:{type:'string'},display_title:{type:'string'}},required:['book_name']}}},
     {type:'function',function:{name:'list_books',description:'List books',parameters:{type:'object',properties:{},required:[]}}},
@@ -219,7 +219,7 @@
           source_msg_id: global.lastUserMsgId ? global.lastUserMsgId() : null,
           source_excerpt: global.lastUserMsgText ? global.lastUserMsgText() : '',
           timezone: global.clientTimezone ? global.clientTimezone() : 'UTC',
-          now_ms:Date.now(), ttl_class:args.ttl_class||'slow'
+          now_ms:Date.now(), ttl_class:args.ttl_class||'permanent'
         })
       });
       var pinText = await rM.text();

@@ -298,12 +298,43 @@ def resolve_event_datetime(
     )
 
 
-def _resolve_target(msg: Message, created_local: datetime.datetime) -> datetime.datetime | None:
-    content = msg.content or ""
+def resolve_fact_target(
+    content: str, created_local: datetime.datetime
+) -> datetime.datetime | None:
+    """Resolve a clock or calendar reference in fact text to local datetime."""
     event = resolve_event_datetime(content, created_local)
     if event is not None:
         return event
     return parse_fact_time(content, created_local)
+
+
+def _resolve_target(msg: Message, created_local: datetime.datetime) -> datetime.datetime | None:
+    return resolve_fact_target(msg.content or "", created_local)
+
+
+def _effective_ttl_class(
+    content: str,
+    ttl_class: str,
+    now: datetime.datetime,
+    tz: str,
+) -> str:
+    """Ephemeral facts expire in minutes — never use that for deadlines or plans."""
+    if ttl_class not in ("permanent", "slow", "ephemeral"):
+        ttl_class = "permanent"
+    if ttl_class != "ephemeral":
+        return ttl_class
+    created_local = _utc_to_local(now, tz)
+    if resolve_fact_target(content, created_local) is not None:
+        return "slow"
+    if (
+        _FUTURE_HINT.search(content)
+        or _CLOCK_SUFFIX.search(content)
+        or _CLOCK_BARE.search(content)
+        or _MIDNIGHT.search(content)
+        or _MONTH_DAY.search(content)
+    ):
+        return "slow"
+    return ttl_class
 
 
 def _fmt_delta(td: datetime.timedelta) -> str:
@@ -531,8 +562,7 @@ def pin_fact(
     content = _clean(content)
     if not content:
         raise ValueError("content required")
-    if ttl_class not in ("permanent", "slow", "ephemeral"):
-        ttl_class = "permanent"
+    ttl_class = _effective_ttl_class(content, ttl_class, now, tz)
     _ensure_meta(store)
 
     if revises_turn_id is not None:
